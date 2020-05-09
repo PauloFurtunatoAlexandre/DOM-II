@@ -11,3 +11,11 @@ body.addEventListener('keydown', () => {
     body.style.transition = 'all 0.9s'
 })
 
+let imgBus = document.querySelector('.container.home .intro img')
+imgBus.addEventListener('wheel', (e) => {
+    event.preventDefault()
+
+    const upsideDown = Math.sign(event.deltaY);
+
+    imgBus.style.transform = `scale(${upsideDown})`
+})
