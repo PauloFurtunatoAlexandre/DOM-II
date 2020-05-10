@@ -28,6 +28,7 @@ imgBus.addEventListener('wheel', () => {
 
     imgBus.style.transform = `scale(${upsideDown})`
     imgBus.style.transition = 'all 0.6s'
+    stopPropagation()
 })
 
 let pickElement = document.querySelector('section.content-destination h2')
@@ -82,6 +83,7 @@ window.addEventListener('scroll', (e) => {
     }
     e.stopPropagation()
 })
+
 //7
 let protectedParagraph = document.querySelector('p')
 
@@ -89,20 +91,16 @@ protectedParagraph.addEventListener('contextmenu', e => {
     e.preventDefault()
 })
 
-let header = document.querySelector('.container.home .intro h2')
-
-header.addEventListener('select', (e) => {
-    let selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd)
-    console.log(selection)
-    selection.style.backgroundColor = 'yellow'
-})
-
-//8
-// let warning = document.querySelector('.container.home')
-// warning.addEventListener('keydown', () => {
-//     alert('Careful, you touch the keyboard by mistake!')
+// //8
+// let header = document.querySelector('.container.home .intro h2')
+// console.log(header)
+// header.addEventListener('select', (e) => {
+//     let selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd)
+//     console.log(selection)
+//     selection.style.backgroundColor = 'yellow'
 // })
 
+//8
 const logger = document.querySelector('.content-pick .destination .btn')
 logger.textContent = 'Load it!'
 
@@ -129,3 +127,13 @@ function runRequest(url) {
     request.send()
     return request
 }
+
+//9
+window.addEventListener("offline", () => {
+    alert('Oh oh, something is wrong, you are offline.')
+})
+
+//10
+window.addEventListener("online", () => {
+    alert('Phew! We thought we lost you! Welcome back :)')
+})
