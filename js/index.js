@@ -137,3 +137,15 @@ window.addEventListener("offline", () => {
 window.addEventListener("online", () => {
     alert('Phew! We thought we lost you! Welcome back :)')
 })
+
+//stretch task
+gsap.from(logo, {duration: 1.5, opacity: 0, scale: 0.2, ease: 'back'})
+
+let rightImg = document.querySelector('section:nth-child(2) > div.img-content > img')
+gsap.from(rightImg, {duration: 1.5, x:500, opacity: 0, scale: 0.5, ease: 'bounce'})
+
+let leftImg = document.querySelector('section.content-section.inverse-content > div.img-content > img')
+gsap.from(leftImg, {duration: 1.5, x:-500, opacity: 0, scale: 0.5, ease: 'bounce'})
+
+let pickDestinyImg = document.querySelector('section.content-destination > img')
+gsap.from(pickDestinyImg, {duration: 1.5, y:500, opacity: 0, scale: 0.5, ease: 'bounce'})
